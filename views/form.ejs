@@ -1,0 +1,24 @@
+<form method="POST" action="/new">
+  <div class="form-input">
+    <label for="author">Your name (required)</label>
+    <input
+      type="text"
+      id="author"
+      name="user"
+      placeholder="Type your name here"
+      required
+    />
+  </div>
+  <div class="form-input">
+    <label for="message">Your message</label>
+    <textarea
+      name="text"
+      id="message"
+      placeholder="How's your mood today?"
+    ></textarea>
+  </div>
+  <div class="form-buttons">
+    <button type="submit">Send</button>
+    <button type="button"><a href="/">Cancel</a></button>
+  </div>
+</form>

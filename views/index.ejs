@@ -1,0 +1,15 @@
+
+<h1>
+    <%= locals.title %>
+</h1>
+<ul> 
+    <% locals.messages.map((message) => { %>
+        <li>
+            <a href="/details/<%= message.id %>">
+                <span><%= message.user + " says:" %></span>
+                <span><%- message.text %></span>
+                <span><%= "Sent at " + message.added.toLocaleString('fr-FR') %></span>
+            </a>
+        </li>
+    <% }) %>
+</ul>

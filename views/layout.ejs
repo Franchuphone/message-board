@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <title><%= typeof title !== 'undefined' ? title : 'Not found' %></title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Board</a>
+        <a href="/new" id="add-msg"
+          ><img src="../images/tooltip-plus-outline.svg" alt=""
+        /></a>
+      </nav>
+    </header>
+
+    <main><%- body %></main>
+
+    <footer>
+      <p>
+        Made with 💚 by
+        <a href="https://github.com/Franchuphone" target="_blank"
+          >Franchuphone</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
