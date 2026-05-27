@@ -1,16 +1,21 @@
-const { nanoid } = require( "nanoid" );
-
+const { nanoid } = require("nanoid");
 
 const messages = [
   {
-    text: "Hi there!",
-    user: "Amando",
+    text: "La vaquitaaaaaaa",
+    user: "Daniel",
     added: new Date(),
-    id: nanoid( 6 ),
+    id: nanoid(6),
   },
   {
-    text: "Hello World!",
-    user: "Charles",
+    text: "Puta",
+    user: "Yoyo",
+    added: new Date(),
+    id: nanoid(6),
+  },
+  {
+    text: "WTF !!! 😂😂😂",
+    user: "Nat",
     added: new Date(),
     id: nanoid(6),
   },
