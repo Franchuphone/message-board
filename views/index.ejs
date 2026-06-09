@@ -6,9 +6,9 @@
     <% locals.messages.map((message) => { %>
         <li>
             <a href="/details/<%= message.id %>">
-                <span><%= message.user + " says:" %></span>
-                <span><%- message.text %></span>
-                <span><%= "Sent at " + message.added.toLocaleString('fr-FR') %></span>
+                <span><%= message.username + " says:" %></span>
+                <span><%- message.message %></span>
+                <span><%= "Sent at " + message.created_at.toLocaleString('fr-FR') %></span>
             </a>
         </li>
     <% }) %>

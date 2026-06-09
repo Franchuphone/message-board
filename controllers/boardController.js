@@ -1,28 +1,30 @@
 const { nanoid } = require("nanoid");
-const messages = require("../models/messages");
+const { getAllMessages, postMessage, getMessage } = require("../db/queries");
 
-const getIndex = (req, res) =>
-  res.render("index", { title: "Messages Board", messages: messages });
+const getIndex = async (req, res) => {
+  const messages = await getAllMessages();
+  res.render("index", { title: "Messages board", messages: messages });
+};
 
 const getForm = (req, res) => res.render("form", { title: "Sending message" });
 
-const postMsg = (req, res) => {
-  const formattedMessage = req.body.text.replace(/\n/g, "<br>");
-  messages.push({
-    text: formattedMessage,
-    user: req.body.user,
-    added: new Date(),
-    id: nanoid(6),
-  });
+const postMsg = async (req, res) => {
+  const formattedText = req.body.text.replace(/\n/g, "<br>");
+  const message = {
+    username: req.body.user,
+    text: formattedText,
+  };
+  await postMessage(message);
   res.redirect("/");
 };
 
-const getMsg = (req, res, next) => {
-  const queriedMsg = messages.find((message) => message.id == req.params.id);
-  queriedMsg !== undefined
+const getMsg = async (req, res, next) => {
+  const queriedMsg = await getMessage(req.params.id);
+  console.log(queriedMsg);
+  queriedMsg
     ? res.render("message", {
         message: queriedMsg,
-        title: `Message from ${queriedMsg.user}`,
+        title: `Message from ${queriedMsg.username}`,
       })
     : next();
 };

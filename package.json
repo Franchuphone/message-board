@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node app.js",
+    "db-init": "node ./db/populateDb.js",
     "dev": "nodemon app.js"
   },
   "dependencies": {
+    "dotenv": "^17.4.2",
     "ejs": "^6.0.1",
     "express": "^5.2.1",
     "express-ejs-layouts": "^2.5.1",
     "nanoid": "^5.1.11",
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.14",
+    "pg": "^8.21.0"
   }
 }
